@@ -19,12 +19,12 @@ const translations = {
     "header.about": "About",
     "header.login": "Login",
     "header.register": "Register Business",
-    "hero.description" : "",
+    "hero.description": "",
 
     //Search
-    "search.search" : "Search",
-    "search.allCategories" : "All Categories",
-    "search.placeholder" : "Search Local Businesses",
+    "search.search": "Search",
+    "search.allCategories": "All Categories",
+    "search.placeholder": "Search Local Businesses",
 
     // Hero Section
     "hero.title": "Connect with",
@@ -46,7 +46,7 @@ const translations = {
       "Discover top-rated businesses in your area that are making a difference in their communities.",
     "featured.viewDetails": "View Details",
     "featured.viewAll": "View All Businesses",
-    "featured.description" : "",
+    "featured.description": "",
 
     // Categories
     "categories.title": "Browse by Category",
@@ -179,8 +179,34 @@ const translations = {
     "modal.location": "Location",
     "modal.hours": "Business Hours",
     "modal.contactInfo": "Contact Information",
-    "cta.browse" : "Browse",
-    "cta.register" : "Register",
+    "cta.browse": "Browse",
+    "cta.register": "Register",
+
+
+    //Register
+    "register.businessNamePlaceholder": "Business Name",
+    "register.ownerNamePlaceholder": "Owner Name",
+    "register.businessCategory": "Business Category",
+    "register.selectCategory": "Select Category",
+    "register.businessDescription": "Business Description",
+    "register.businessDescriptionPlaceholder": "Enter Business Description",
+    "register.emailAddress": "Email Address ",
+    "register.phoneNumber": "Phone Number ",
+    "register.businessAddress": "Business Address",
+    "register.streetAddressPlaceholder": "Enter Street Address ",
+    "register.cityPlaceholder": "City",
+    "register.selectState": "Select State",
+    "register.accountSecurity": "Account Security ",
+    "register.password": "Password",
+    "register.passwordPlaceholder": "Password",
+    "register.confirmPasswordPlaceholder": "Confirm Password",
+    "register.businessLogo": "Business Logo",
+    "register.businessLogoUpload": "Upload Business Logo",
+    "register.agreeTerms": "Agree Terms",
+    "register.and": "and",
+    "register.agreeServices": "Services",
+    "register.registerBusiness": "Register!",
+    "register.signIn": "Sign in"
   },
   hi: {
     // Header

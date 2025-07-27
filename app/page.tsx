@@ -319,7 +319,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-         <div className="flex justify-center items-center text-gray-300 text-xl" >LocalConnect</div>
+          <div className="flex justify-center items-center text-gray-300 text-xl" >LocalConnect</div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 LocalConnect. All rights reserved.</p>
           </div>
