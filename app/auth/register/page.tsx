@@ -327,11 +327,52 @@ export default function RegisterPage() {
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900">{t("register.businessLogo")} (Optional)</h3>
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                  <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                  <p className="text-sm text-gray-600 mb-2">{t("register.businessLogoUpload")}</p>
-                  <Button type="button" variant="outline" size="sm">
-                    {t("register.chooseFile")}
-                  </Button>
+                  {/* @ts-ignore */}
+                  {formData.logo ? (
+                    <div className="mb-4">
+                      <img
+                        //@ts-ignore 
+                        src={formData.logo}
+                        alt="Business Logo Preview"
+                        className="h-32 w-auto mx-auto object-contain"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        className="mt-2"
+                        onClick={() => handleInputChange("logo", "")}
+                      >
+                        {t("register.removeFile")}
+                      </Button>
+                    </div>
+                  ) : (
+                    <>
+                      <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                      <p className="text-sm text-gray-600 mb-2">{t("register.businessLogoUpload")}</p>
+                      <input
+                        type="file"
+                        id="logo-upload"
+                        className="hidden"
+                        accept="image/*"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                              handleInputChange("logo", e.target?.result as string);
+                            };
+                            reader.readAsDataURL(file);
+                          }
+                        }}
+                      />
+                      <label htmlFor="logo-upload">
+                        <Button type="button" variant="outline" size="sm" asChild>
+                          <span>{t("register.chooseFile")}</span>
+                        </Button>
+                      </label>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -345,17 +386,20 @@ export default function RegisterPage() {
                 />
                 <Label htmlFor="terms" className="text-sm leading-relaxed">
                   {t("register.agreeTerms")}{" "}
-                  <Link href="/terms" className="text-blue-600 hover:text-blue-700">
-                    {t("register.termsOfService")}
-                  </Link>{" "}
                   {t("register.and")}{" "}
-                  <Link href="/privacy" className="text-blue-600 hover:text-blue-700">
-                    {t("register.privacyPolicy")}
-                  </Link>
+                  {t("register.conditions")}{" "}
+
                 </Label>
               </div>
 
-              <Button type="submit" className="w-full" size="lg">
+              <Button type="submit" className="w-full" size="lg" onClick={async () => {
+                await fetch('/api/register', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(formData),
+                });
+
+              }} >
                 {t("register.registerBusiness")}
               </Button>
             </form>

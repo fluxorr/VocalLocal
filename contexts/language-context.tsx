@@ -109,6 +109,7 @@ const translations = {
     "register.chooseFile": "Choose File",
     "register.terms": "I agree to the Terms of Service and Privacy Policy",
     "register.alreadyAccount": "Already have an account? Sign in here",
+    "register.removeFile": "Remove Image",
 
     // Browse
     "browse.businessesFound": "businesses found",
@@ -206,7 +207,8 @@ const translations = {
     "register.and": "and",
     "register.agreeServices": "Services",
     "register.registerBusiness": "Register!",
-    "register.signIn": "Sign in"
+    "register.signIn": "Sign in",
+    "register.conditions": "Conditions."
   },
   hi: {
     // Header

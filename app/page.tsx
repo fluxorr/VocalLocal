@@ -14,14 +14,7 @@ import { BusinessDetailsModal } from "@/components/business-details-modal"
 const languages = [
   { code: "en", name: "English", native: "English" },
   { code: "hi", name: "Hindi", native: "हिंदी" },
-  { code: "bn", name: "Bengali", native: "বাংলা" },
-  { code: "te", name: "Telugu", native: "తెలుగు" },
-  { code: "mr", name: "Marathi", native: "मराठी" },
-  { code: "ta", name: "Tamil", native: "தமிழ்" },
-  { code: "gu", name: "Gujarati", native: "ગુજરાતી" },
-  { code: "kn", name: "Kannada", native: "ಕನ್ನಡ" },
-  { code: "ml", name: "Malayalam", native: "മലയാളം" },
-  { code: "pa", name: "Punjabi", native: "ਪੰਜਾਬੀ" },
+
 ]
 
 const featuredBusinesses = [
@@ -326,6 +319,7 @@ export default function HomePage() {
         </div>
       </footer>
       <BusinessDetailsModal
+        //@ts-ignore
         business={selectedBusiness}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
